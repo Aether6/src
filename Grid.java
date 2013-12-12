@@ -19,6 +19,100 @@ public class Grid {
 				+ "|" + three + "|";
 		return yarn;
 	}
+	
+	public boolean didCircleWin() {
+		
+		if (!(one.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& two.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(four.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& four.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& four.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(eight.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& two.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(nine.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		} else if (!(one.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean didCrossWin() {
+		
+		if (!(one.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& one.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& two.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& three.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(four.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& four.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& six.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& four.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& one.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(eight.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& two.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(nine.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& six.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& three.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& three.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		} else if (!(one.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+				&& one.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& five.getSymbol() == TicTacToeSymbol.Symbol.CROSS
+				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CROSS) {
+			return true;
+		}
+		
+		return false;
+	}
 
 	public void setSymbolOf(String number, String symbol) {
 		number = number.toLowerCase();

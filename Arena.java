@@ -1,6 +1,6 @@
 /*
  * Welcome to the Arena
- * Here we set up games of Matchsticks, from one game to about 2,147,483,647 games just in case you wanted to play 
+ * Here we set up games of TicTacToe, from one game to about 2,147,483,647 games just in case you wanted to play 
  * until the heat death of the universe.
  */
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class Arena {
 		boolean sentinel = true;
 
 		do {
-			System.out.println("Welcome to the Arena, We have a lovey game of Match Sticks awaiting your (Or Thousands!!!)");
+			System.out.println("Welcome to the Arena, We have a lovey game of TicTacToe awaiting you (Or Thousands!!!)");
 
 			System.out.println("How many games whould you like to play?");
 			int numberOfGames = scan.nextInt();

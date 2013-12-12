@@ -5,30 +5,30 @@
  *
  */
 public class Game {
-	
+
 	public String numToPrint(int number) {
 		String words;
 		switch (number) {
-			case 1:
-				words = "One";
-			case 2:
-				words = "Two";
-			case 3:
-				words = "Three";
-			case 4:
-				words = "Four";
-			case 5:
-				words = "Five";
-			case 6:
-				words = "Six";
-			case 7:
-				words = "Seven";
-			case 8:
-				words = "Eight";
-			case 9:
-				words = "Nine";
-			default:
-				words = "???";
+		case 1:
+			words = "One";
+		case 2:
+			words = "Two";
+		case 3:
+			words = "Three";
+		case 4:
+			words = "Four";
+		case 5:
+			words = "Five";
+		case 6:
+			words = "Six";
+		case 7:
+			words = "Seven";
+		case 8:
+			words = "Eight";
+		case 9:
+			words = "Nine";
+		default:
+			words = "???";
 		}
 
 		return words;
@@ -38,109 +38,55 @@ public class Game {
 		setPlayerOne = setPlayerOne.toUpperCase();
 		setPlayerTwo = setPlayerTwo.toUpperCase();
 		
-		int playerOneWins = 0;
-		int playerTwoWins = 0;
-
-		Player matchStickPlayer = new Player();
-
 		PlayerType player1 = new PlayerType();
 		PlayerType player2 = new PlayerType();
 
 		player1.setPlayer(setPlayerOne);
 		player2.setPlayer(setPlayerTwo);
+		
+		int playerOneWins = 0;
+		int playerTwoWins = 0;
+
+		Player ticTacToePlayer = new Player();
 
 		System.out.println("Field Looks like");
+		
+		Grid grid = new Grid();
 		
 		System.out.println("|7|8|9|");
 		System.out.println("|4|5|6|");
 		System.out.println("|1|2|3|");
 
 		do {
-			int totalSticks = 15;
-
+			boolean sentinel = true;
 			do {
-				int orginal = totalSticks;
+				
 				if (player1.getPlayer() == PlayerType.Player.USER) {
-					System.out.println("");
-					for (int i = totalSticks; i > 0; i--) {
-						System.out.print("|");
-					}
-					System.out.println("");
 					
-					System.out.println("Player one, how many matchsticks would you like to take?");
-					totalSticks = totalSticks - matchStickPlayer.user(totalSticks);
-					if (totalSticks <= 0) {
-						playerTwoWins++;
-					}
-
 				} else if (player1.getPlayer() == PlayerType.Player.SMART) {
-					totalSticks = totalSticks - matchStickPlayer.smart(totalSticks);
-					if (totalSticks <= 0) {
-						playerTwoWins++;
-					}
-
-				} else {
-					totalSticks = totalSticks - matchStickPlayer.random(totalSticks);
-					if (totalSticks <= 0) {
-						playerTwoWins++;
-					}
+					
+				} else { 
+					grid = ticTacToePlayer.random(grid, TicTacToeSymbol.Symbol.CIRCLE);
 				}
+				
+				
 				
 				if (player2.getPlayer() == PlayerType.Player.USER) {
-					System.out.print("Player One took " + (numToPrint(orginal - totalSticks)));
-					if ((orginal - totalSticks) == 1) {
-						System.out.print("Stick");
-					} else {
-						System.out.print("Sticks");
-					}
+					
+				} else if (player2.getPlayer() == PlayerType.Player.SMART) {
+					
+				} else { 
+					grid = ticTacToePlayer.random(grid, TicTacToeSymbol.Symbol.CROSS);
 				}
+
 				
-				if (totalSticks > 0) {
-					orginal = totalSticks;
-					
-					if (player2.getPlayer() == PlayerType.Player.USER) {
-						totalSticks = totalSticks - matchStickPlayer.user(totalSticks);
-						
-						System.out.println("");
-						for (int i = totalSticks; i > 0; i--) {
-							System.out.print("|");
-						}
-						System.out.println("");
-						
-						if (totalSticks <= 0) {
-							playerOneWins++;
-						}
-
-					} else if (player2.getPlayer() == PlayerType.Player.SMART) {
-						totalSticks = totalSticks - matchStickPlayer.smart(totalSticks);
-						if (totalSticks <= 0) {
-							playerOneWins++;
-						}
-
-					} else {
-						totalSticks = totalSticks - matchStickPlayer.random(totalSticks);
-						if (totalSticks <= 0) {
-							playerOneWins++;
-							
-						}
-					}
-					
-					if (player1.getPlayer() == PlayerType.Player.USER) {
-						System.out.print("Player Two took " + (numToPrint(orginal - totalSticks)));
-						if ((orginal - totalSticks) == 1) {
-							System.out.print("Stick");
-						} else {
-							System.out.print("Sticks");
-						}
-					}
-				}
-
- 			} while (totalSticks > 0);
+				
+			} while (sentinel == true);
 			numberOfGames--;
 		} while (numberOfGames > 0);
-		
+
 		System.out.println("Player One Won: " + playerOneWins + " Games");
 		System.out.println("Player two Won: " + playerTwoWins + " Games");
-		
+
 	}
 }
