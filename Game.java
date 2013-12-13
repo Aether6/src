@@ -37,50 +37,66 @@ public class Game {
 	public void play(String setPlayerOne, String setPlayerTwo, int numberOfGames) {
 		setPlayerOne = setPlayerOne.toUpperCase();
 		setPlayerTwo = setPlayerTwo.toUpperCase();
-		
+
 		PlayerType player1 = new PlayerType();
 		PlayerType player2 = new PlayerType();
 
 		player1.setPlayer(setPlayerOne);
 		player2.setPlayer(setPlayerTwo);
-		
+
 		int playerOneWins = 0;
 		int playerTwoWins = 0;
 
 		Player ticTacToePlayer = new Player();
 
 		System.out.println("Field Looks like");
-		
-		Grid grid = new Grid();
-		
+
+		Grid tac = new Grid();
+
 		System.out.println("|7|8|9|");
 		System.out.println("|4|5|6|");
 		System.out.println("|1|2|3|");
 
 		do {
 			boolean sentinel = true;
+			boolean circleWins = false;
+			boolean crossWins = false;
+
 			do {
-				
+
 				if (player1.getPlayer() == PlayerType.Player.USER) {
-					
+					tac = ticTacToePlayer.user(tac, TicTacToeSymbol.Symbol.CIRCLE);
+					circleWins = tac.didCircleWin();
 				} else if (player1.getPlayer() == PlayerType.Player.SMART) {
-					
-				} else { 
-					grid = ticTacToePlayer.random(grid, TicTacToeSymbol.Symbol.CIRCLE);
-				}
-				
-				
-				
-				if (player2.getPlayer() == PlayerType.Player.USER) {
-					
-				} else if (player2.getPlayer() == PlayerType.Player.SMART) {
-					
-				} else { 
-					grid = ticTacToePlayer.random(grid, TicTacToeSymbol.Symbol.CROSS);
+				//	tac = ticTacToePlayer.smart(tac, TicTacToeSymbol.Symbol.CIRCLE);
+					circleWins = tac.didCircleWin();
+				} else {
+					tac = ticTacToePlayer.random(tac, TicTacToeSymbol.Symbol.CIRCLE);
+					circleWins = tac.didCircleWin();
 				}
 
+				if (circleWins == false) {
+
+					if (player2.getPlayer() == PlayerType.Player.USER) {
+						tac = ticTacToePlayer.user(tac, TicTacToeSymbol.Symbol.CROSS);
+						crossWins = tac.didCrossWin();
+					} else if (player2.getPlayer() == PlayerType.Player.SMART) {
+				//		tac = ticTacToePlayer.smart(tac, TicTacToeSymbol.Symbol.CROSS);
+						crossWins = tac.didCrossWin();
+					} else {
+						tac = ticTacToePlayer.random(tac, TicTacToeSymbol.Symbol.CROSS);
+						crossWins = tac.didCrossWin();
+					}
+				}
 				
-				
+				if (circleWins == true) {
+					playerOneWins++;
+					sentinel = false;
+				} else if (crossWins == true) {
+					playerTwoWins++;
+					sentinel = false;
+				}
+
 			} while (sentinel == true);
 			numberOfGames--;
 		} while (numberOfGames > 0);

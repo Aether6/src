@@ -162,54 +162,57 @@ public class Player {
 		return tac;
 	}
 
-	public Grid smart(Grid tac, TicTacToeSymbol.Symbol playerSymbol) {
-		String symbol = "cross";
-
-		if (playerSymbol == TicTacToeSymbol.Symbol.CIRCLE) {
-			symbol = "circle";
-
-		}
-
-		if (tac.getSymbolof("five") == TicTacToeSymbol.Symbol.SPACE) {
-			tac.setSymbolOf("five", symbol);
-			return tac;
-			
-		} else if (!(four.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& four.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-			
-		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& four.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-		} else if (!(eight.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& two.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-		} else if (!(nine.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-		} else if (!(one.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
-				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
-				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
-			return tac;
-		}
-	}
+//	public Grid smart(Grid tac, TicTacToeSymbol.Symbol playerSymbol) {
+//		if (playerSymbol == TicTacToeSymbol.Symbol.CIRCLE) {
+//			symbol = "circle";
+//		} else {
+//			symbol = "cross";
+//		}
+//		
+//		TicTacToeSymbol toBlock = new TicTacToeSymbol();
+//		toBlock.setSymbol(symbol);
+//
+//		if (tac.getSymbolof("one") == TicTacToeSymbol.Symbol.SPACE &&
+//			tac.getSymbolof("two") == TicTacToeSymbol.Symbol.SPACE {
+//			tac.setSymbolOf("five", symbol);
+//			return tac;
+//			
+//		} else if (!(four.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& four.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//			
+//		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& four.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//		} else if (!(eight.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& two.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//		} else if (!(nine.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& three.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//		} else if (!(one.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
+//				&& one.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
+//				&& nine.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
+//			return tac;
+//		}
+//	}
 }
