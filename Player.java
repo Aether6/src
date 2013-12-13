@@ -179,6 +179,7 @@ public class Player {
 				&& five.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
 				&& six.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE) {
 			return tac;
+			
 		} else if (!(seven.getSymbol() == TicTacToeSymbol.Symbol.SPACE)
 				&& seven.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
 				&& eight.getSymbol() == TicTacToeSymbol.Symbol.CIRCLE
